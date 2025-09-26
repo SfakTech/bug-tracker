@@ -5,24 +5,25 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>New Ticket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-
-<body>
+<body style="background: #fff;">
     <div class="create_tickets">
         <h1>Create New Ticket</h1>
-        <form action="../admin_page.php" method="POST">
+      
+        <form action="store.php" method="POST">
             <label>Title:</label><br>
             <input type="text" name="title" required><br><br>
 
             <label>Description:</label><br>
-            <textarea name="description"></textarea><br><br>
+            <textarea name="description" required></textarea><br><br>
 
             <label>Status:</label><br>
             <select name="status">
@@ -32,9 +33,7 @@ if (!isset($_SESSION['email'])) {
             </select><br><br>
 
             <button type="submit" name="save">Save Ticket</button>
-
         </form>
     </div>
 </body>
-
 </html>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
+:root {
+    --text-color: #333;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +17,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(to right, #ffad60);
-    color: #333;
+    color: var(--text-color);
 }
 
 .container {
@@ -49,7 +53,7 @@ select {
     border: none;
     outline: none;
     font-size: 16px;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -80,6 +84,7 @@ p {
 p a {
     color: #ff891c;
     text-decoration: none;
+    
 }
 
 p a:hover {
@@ -143,7 +148,7 @@ span {
 
 .tickets-section h1 {
     font-size: 36px;
-    color: #333;
+    color: var(--text-color);
 }
 
 .tickets-section a {
@@ -161,9 +166,23 @@ span {
     border-collapse: collapse;
 }
 
-.tickets-section table th,
-.tickets-section table td {
+
+h1 {
+    text-align: center;
+}
+
+.table_section th,
+.table_section td {
     padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
+    border-radius: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table_section th {
+    background-color: #ff891c;
+}
+
+.table_section {
+    margin: 0 auto; 
 }
