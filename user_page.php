@@ -27,7 +27,7 @@ if (!isset($_SESSION['email'])) {
 </div>
 
 <div class="container">
-     <?php require 'tickets/lists.php' ?>
+     <?php require 'tickets/tickets.php' ?>
 </div>
 </body>
 

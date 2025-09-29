@@ -84,7 +84,7 @@ p {
 p a {
     color: #ff891c;
     text-decoration: none;
-    
+
 }
 
 p a:hover {
@@ -176,7 +176,7 @@ h1 {
     padding: 10px;
     text-align: center;
     border-radius: 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #ff891c;
 }
 
 .table_section th {
@@ -184,5 +184,21 @@ h1 {
 }
 
 .table_section {
-    margin: 0 auto; 
+    margin: 0 auto;
 }
+
+.btn_secondary  {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #ff891c;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+
