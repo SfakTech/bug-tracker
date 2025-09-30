@@ -1,4 +1,3 @@
-
 <?php
 require_once 'config.php';
 ?>
@@ -10,4 +9,3 @@ require_once 'config.php';
     <a href="tickets/lists.php">Edit Tickets</a>
 
 </div>
-

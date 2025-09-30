@@ -37,7 +37,7 @@ if (isset($_SESSION['role']) and $_SESSION['role'] === "admin") {
             <input type="text" name="title" required><br><br>
 
             <label>Description:</label><br>
-            <textarea name="description" required></textarea><br><br>
+            <input name="description" required><br><br>
 
             <label>Status:</label><br>
             <select name="status">
@@ -47,7 +47,7 @@ if (isset($_SESSION['role']) and $_SESSION['role'] === "admin") {
             </select><br><br>
 
             <button type="submit" name="save">Save Ticket</button>
-            <a href="<?php echo $backPage; ?>" class="btn_secondary">Back</a>
+            <a href="<?php echo $backPage; ?>" class="btn_home_page">Back</a>
         </form>
     </div>
 </body>

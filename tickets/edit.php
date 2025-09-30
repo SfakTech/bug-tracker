@@ -1,6 +1,8 @@
 <?php
 require "../config.php";
 
+$backPage = "lists.php";
+
 $id = $_GET['id'] ?? 0;
 $id = intval($id);
 
@@ -31,11 +33,17 @@ if ($stm = mysqli_fetch_assoc($run)) {
             <h1>Edit Form</h1>
 
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <input class="form-control mb-3 border-secondary" type="text" value="<?php echo $id; ?>" readonly>
+            <input class="form-control mb-3 border-secondary" type="text" name="id" value="<?php echo $id; ?>" readonly="ID">
             <input class="form-control mb-3 border-secondary" type="text" name="title" value="<?php echo $title; ?>" placeholder="Title">
-            <input class="form-control mb-3 border-secondary" type="text" name="status" value="<?php echo $status; ?>" placeholder="Status">
+            <label>Status:</label><br>
+            <select name="status">
+                <option value="open">Open</option>
+                <option value="in progress">In Progress</option>
+                <option value="closed">Closed</option>
+            </select><br><br>   
 
             <button class="btn btn-success" style="background-color:#ff891c; border-color:#ff891c;" name="edit">Confirm</button>
+            <a href="<?php echo $backPage; ?>" class="btn btn-success" style="background-color:#ff891c; border-color:#ff891c;" >Back</a>
         </div>
     </form>
 </body>

@@ -18,17 +18,17 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background: #fff;">  
+<body style="background: #fff;">
 
- <div class="header">
-    <div class="welcome">Welcome, <span><?= $_SESSION['name']; ?></span></div>
-    <div class="admin-text">This is an <span>admin</span> page</div>
-    <button onclick="window.location.href='logout.php'">Logout</button>
-</div>
+    <div class="header">
+        <div class="welcome">Welcome, <span><?= $_SESSION['name']; ?></span></div>
+        <div class="admin-text">This is an <span>admin</span> page</div>
+        <button onclick="window.location.href='logout.php'">Logout</button>
+    </div>
 
-<div class="container">
-     <?php require 'tickets/tickets.php' ?>
-</div>
+    <div class="container">
+        <?php require 'tickets/tickets.php' ?>
+    </div>
 
 
 

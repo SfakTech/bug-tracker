@@ -9,7 +9,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
- 
+
     $email = $_SESSION['email'];
     $stmt = $conn->prepare("SELECT id, role FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
@@ -25,22 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
     $user_id = $user['id'];
     $role = $user['role'];
 
-  
+
     $title = $_POST['title'];
     $description = $_POST['description'];
     $status = $_POST['status'];
 
- 
-    $stmt = $conn->prepare("INSERT INTO tickets (user_id, title, description, status) VALUES (?, ?, ?, ?)");
+
+    $stmt = $conn->prepare("INSERT INTO tickets (user_id, title, description, status, created_at) VALUES (?, ?, ?, ?, NOW())");
     $stmt->bind_param("isss", $user_id, $title, $description, $status);
 
     if ($stmt->execute()) {
-      
-        if ($role === 'admin') {
-            header("Location: ../admin_page.php");
-        } else {
-            header("Location: ../user_page.php");
-        }
+
+        $redirect = ($role === 'admin') ? '../admin_page.php' : '../user_page.php';
+        header("Location: $redirect?msg=Ticket+added+successfully");
+
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -48,5 +46,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
 
     $stmt->close();
 }
-?>
-

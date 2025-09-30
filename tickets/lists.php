@@ -1,4 +1,13 @@
 <?php
+
+$backPage = "../user_page.php";
+if (isset($_SESSION['role']) and $_SESSION['role'] === "admin") {
+    $backPage = "../admin_page.php";
+}
+
+?>
+
+<?php
 require "../config.php";
 
 if (isset($_POST['edit'])) {
@@ -6,7 +15,7 @@ if (isset($_POST['edit'])) {
     $title = $_POST['title'];
     $status = $_POST['status'];
 
-    $sql = "UPDATE tickets SET title = '$title', status = '$status' WHERE id = '$id'";
+    $sql = "UPDATE tickets SET  title = '$title', status = '$status' WHERE id = $id";
     $run = mysqli_query($conn, $sql);
 
     if ($run) {
@@ -34,7 +43,6 @@ $run = mysqli_query($conn, $sql);
 </head>
 
 <body>
-
     <div class="container mt-5">
         <h2>Ticket List</h2>
         <table class="table table-bordered">
@@ -57,13 +65,14 @@ $run = mysqli_query($conn, $sql);
                         <td><?php echo $row['created_at']; ?></td>
                         <td><?php echo $row['modified_at']; ?></td>
                         <td>
-                            <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-sm text-white" style="background-color:#ff891c; border-color:#ff891c;" onclick="return confirm('Are you sure you want to delete this ticket?');"> Delete</a>
                             <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm text-white" style="background-color:#ff891c; border-color:#ff891c;">Edit</a>
+                            <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-sm text-white" style="background-color:#ff891c; border-color:#ff891c;" onclick="return confirm('Are you sure you want to delete this ticket?');"> Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+        <a href="<?php echo $backPage; ?>" class="btn btn-success" style="background-color:#ff891c; border-color:#ff891c;">Back</a>
     </div>
 
 </body>
