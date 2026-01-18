@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ffad60);
+    color: var(--text-color);
+}
+
+.container {
+    margin: 0 15px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background: #eee;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff891c;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #e68c38;
+}
+
+p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p a {
+    color: #ff891c;
+    text-decoration: none;
+
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    padding: 12px;
+    background: #f8d7da;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #a42834;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+span {
+    color: #ff891c;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header .welcome {
+    text-align: left;
+    font-size: 20px;
+}
+
+.header .admin-text {
+    text-align: center;
+    flex-grow: 1;
+    font-size: 18px;
+}
+
+.header button {
+    padding: 6px 10px;
+    font-size: 14px;
+    background: #ff891c;
+    border: none;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 150px;
+}
+
+.tickets-section h1 {
+    font-size: 36px;
+    color: var(--text-color);
+}
+
+.tickets-section a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #ff891c;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.tickets-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.table_section th,
+.table_section td {
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    border-bottom: 1px solid #ff891c;
+}
+
+.table_section th {
+    background-color: #ff891c;
+}
+
+.table_section {
+    margin: 0 auto;
+}
+
+.buttons_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -20px;
+    margin: 20px 0;
+}
+
+.btn_small,
+.btn_secondary {
+    width: auto;
+    padding: 8px 18px;
+    min-width: 150px;
+    text-align: center;
+    background: #ff891c;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.btn_small:hover,
+.btn_secondary:hover {
+    background: #e68c38;
+}
+
+.btn_home_page {
+    width: auto;
+    padding: 6px 14px;
+    min-width: 140px;
+    text-align: center;
+    background: #ff891c;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h6{
+    text-align: center;
+    width: auto;
+    padding: 6px 14px;
+    min-width: 140px;
+    text-align: center;
+    background: #ff891c;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    border: none;
+    transition: background 0.3s ease;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
