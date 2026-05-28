@@ -1,83 +1,57 @@
 # Bug Tracker
 
-A simple web-based bug tracking system for applications, built with PHP and MySQL.
+Bug tracking app I built with PHP and MySQL. Started as a flat PHP project, refactored to MVC.
 
----
-
-## 🔹 Description
-Bug Tracker allows users to:
-- Create new bug reports
-- Track the progress of bug fixes
-- Categorize bugs by priority and status
-- Assign bugs to specific users
-
-The goal of this project is to provide an easy-to-use tool for managing bugs in small to medium development teams.
-
----
-
-## 💻 Technologies
-- PHP 8+
+## Stack
+- PHP 8.2
 - MySQL
 - HTML / CSS / JavaScript
-- Bootstrap (optional)
 
----
+## Running locally
 
-## 🚀 Installation
-1. Clone the repository:
+### With ddev
+
 ```bash
 git clone https://github.com/SfakTech/bug-tracker.git
+cd bug-tracker
+ddev start
+ddev mysql < sql/users.sql
+ddev mysql < sql/tickets.sql
+ddev launch
 ```
 
-2. Move the project to your local server directory (XAMPP):
-```bash
-htdocs/bug-tracker
-```
+### With MAMP
 
-3. Create a MySQL database and import the SQL file:
-```bash
-database.sql
-```
+1. Clone inside `htdocs`
+2. Create a database named `users_db` in phpMyAdmin and import `sql/users.sql` + `sql/tickets.sql`
+3. Check credentials in `app/Core/DB.php` (default: host `localhost`, port `8889`, user/pass `root`)
+4. Open `http://localhost:8888/bug-tracker/public/`
 
-4. Configure the database connection:
-Open the following file and update your database credentials:
-```bash
-config.php
-```
+## Test accounts
 
-5. Start Apache & MySQL from XAMPP and open the project in your browser:
-```
-http://localhost/bug-tracker
-```
+| Role  | Email              | Password |
+|-------|--------------------|----------|
+| Admin | admin@sfaktech.com | admin123 |
+| User  | user@sfaktech.com  | user123  |
 
 ---
 
-## 🔐 Default Admin Credentials
-- **Username:** admin
-- **Password:** admin123
+## Structure
 
-> Note: You can change these credentials directly from the database.
+```
+bug-tracker/
+├── app/
+│   ├── Controllers/
+│   ├── Core/
+│   ├── Middleware/
+│   ├── Models/
+│   └── Views/
+├── config/
+├── public/
+│   ├── assets/
+│   └── index.php
+└── sql/
+```
 
----
-
-## 📸 Screenshots
-Screenshots of the application will be added soon.
-
----
-
-## 📌 Future Improvements
-- Refactor the project using MVC architecture
-- Improve UI/UX and responsiveness
-- Add role-based access control
-- Enhance security (input validation, CSRF protection)
-- Add REST API support
-
----
-
-## 👨‍💻 Author
-**Vasilis Sfakianos** - Junior Web Developer
-
----
-
-## 📄 License
-This project is licensed under the MIT License.
+## License
+MIT
