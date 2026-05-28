@@ -7,7 +7,8 @@ class AuthController extends Controller
 {
     public function showLogin()
     {
-        $this->view('auth/login');
+        $activeTab = $_GET['tab'] ?? 'login';
+        $this->view('auth/login', compact('activeTab'));
     }
 
     public function login()
@@ -31,6 +32,28 @@ class AuthController extends Controller
         ];
 
         $this->redirect('/');
+    }
+
+    public function register()
+    {
+        $name     = $_POST['name'] ?? '';
+        $email    = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
+
+        if (User::findByEmail($email)) {
+            $_SESSION['error'] = 'Email already registered';
+            $this->redirect('/login?tab=register');
+        }
+
+        User::create([
+            'name'     => $name,
+            'email'    => $email,
+            'password' => $password,
+            'role'     => 'user'
+        ]);
+
+        $_SESSION['success'] = 'Account created! You can now log in.';
+        $this->redirect('/login');
     }
 
     public function logout()
