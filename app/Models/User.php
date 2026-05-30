@@ -12,6 +12,19 @@ class User
         return $stmt->fetch();
     }
 
+    public static function all(): array
+    {
+        $db = DB::connect();
+        return $db->query("SELECT id, name, email, role FROM users ORDER BY id ASC")->fetchAll();
+    }
+
+    public static function delete(int $id): bool
+    {
+        $db = DB::connect();
+        $stmt = $db->prepare("DELETE FROM users WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
+
     public static function create(array $data)
     {
         $db = DB::connect();
